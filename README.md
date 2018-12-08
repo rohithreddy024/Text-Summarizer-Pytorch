@@ -51,4 +51,5 @@ for RL training
 ```
 python eval.py
 ```
-
+## References
+* [pytorch implementation of "Get To The Point: Summarization with Pointer-Generator Networks"](https://github.com/atulkum/pointer_summarizer)
