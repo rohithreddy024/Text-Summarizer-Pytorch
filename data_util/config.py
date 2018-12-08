@@ -27,7 +27,7 @@ max_iterations = 500000
 save_model_path = "data/saved_models"
 load_model_path = save_model_path + "/0185000.tar"
 
-resume_training = True
+resume_training = False
 
 intra_encoder = True
 intra_decoder = True
