@@ -14,8 +14,8 @@ Combining [A Deep Reinforced Model for Abstractive Summarization](https://arxiv.
 * [rouge](https://github.com/pltrdy/rouge) 
 
 ## Data
-* Download train, valid and test pairs (article, title) of Gigaword dataset from [here](https://github.com/harvardnlp/sent-summary)
-* Copy files ```train.article.txt```, ```train.title.txt```, ```valid.article.filter.txt```, ```valid.title.filter.txt```, ```input.txt``` and ```task1_ref0.txt``` to ```data/unfinished``` folder
+* Download train, valid and test pairs (article, title) of OpenNMT provided Gigaword dataset from [here](https://github.com/harvardnlp/sent-summary)
+* Copy files ```train.article.txt```, ```train.title.txt```, ```valid.article.filter.txt```and ```valid.title.filter.txt``` to ```data/unfinished``` folder
 * Files are already preprcessed
 
 ## Creating ```.bin``` files and vocab file
