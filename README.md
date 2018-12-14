@@ -1,6 +1,5 @@
 # Text-Summarizer-Pytorch
-
-Implementation of [A Deep Reinforced Model for Abstractive Summarization](https://arxiv.org/pdf/1705.04304.pdf) and [Get To The Point: Summarization with Pointer-Generator Networks](https://arxiv.org/pdf/1704.04368.pdf)
+Combining [A Deep Reinforced Model for Abstractive Summarization](https://arxiv.org/pdf/1705.04304.pdf) and [Get To The Point: Summarization with Pointer-Generator Networks](https://arxiv.org/pdf/1704.04368.pdf)
 
 ## Model Description
 * LSTM based Sequence-to-Sequence model for Abstractive Summarization
@@ -28,7 +27,7 @@ python make_data_files.py
 * You can find data in ```data/chunked``` folder and vocab file in ```data``` folder
 
 ## Training
-* As suggested in [Paulus et al. (2018)](https://arxiv.org/pdf/1705.04304.pdf), first pretrain the seq-to-seq model using modified MLE (with Python 3):
+* As suggested in [Paulus et al. (2018)](https://arxiv.org/pdf/1705.04304.pdf), first pretrain the seq-to-seq model using MLE (with Python 3):
 ```
 python train.py --train_mle=yes --train_rl=no --mle_weight=1.0 --rl_weight=0.0
 ```
