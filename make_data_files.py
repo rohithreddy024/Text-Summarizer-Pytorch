@@ -4,6 +4,8 @@ import collections
 import tqdm
 from tensorflow.core.example import example_pb2
 import struct
+import random
+import shutil
 
 finished_path = "data/finished"
 unfinished_path = "data/unfinished"
@@ -12,10 +14,9 @@ chunk_path = "data/chunked"
 vocab_path = "data/vocab"
 VOCAB_SIZE = 200000
 
-CHUNK_SIZE = 20000 # num examples per chunk, for the chunked data
+CHUNK_SIZE = 15000 # num examples per chunk, for the chunked data
 train_bin_path = os.path.join(finished_path, "train.bin")
 valid_bin_path = os.path.join(finished_path, "valid.bin")
-test_bin_path = os.path.join(finished_path, "test.bin")
 
 def make_folder(folder_path):
     if not os.path.exists(folder_path):
@@ -65,7 +66,6 @@ def creating_finished_data():
 
     write_to_bin(os.path.join(unfinished_path, "train.article.txt"), os.path.join(unfinished_path, "train.title.txt"), train_bin_path, vocab_counter)
     write_to_bin(os.path.join(unfinished_path, "valid.article.filter.txt"), os.path.join(unfinished_path, "valid.title.filter.txt"), valid_bin_path)
-    write_to_bin(os.path.join(unfinished_path, "input.txt"), os.path.join(unfinished_path, "task1_ref0.txt"), test_bin_path)
 
 
 def chunk_file(set_name, chunks_dir, bin_file):
@@ -90,11 +90,18 @@ def chunk_file(set_name, chunks_dir, bin_file):
 
 if __name__ == "__main__":
     delete_folder(finished_path)
-    creating_finished_data()
+    creating_finished_data()        #create bin files
 
     delete_folder(chunk_path)
     chunk_file("train", os.path.join(chunk_path, "train"), train_bin_path)
     chunk_file("valid", os.path.join(chunk_path, "valid"), valid_bin_path)
-    chunk_file("test", os.path.join(chunk_path, "test"), test_bin_path)
+
+    #Validation data contains around 1.9 lakh examples. Create test data by borrowing 15k examples from validation data
+    make_folder(os.path.join(chunk_path, "test"))
+    valid_bin_chunks = os.listdir(os.path.join(chunk_path, "valid"))
+    test_chunk = random.choice(valid_bin_chunks)
+    shutil.move(os.path.join(chunk_path, "valid", test_chunk), os.path.join(chunk_path, "test", "test_00.bin"))
+
+
 
 

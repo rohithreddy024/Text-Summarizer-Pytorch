@@ -47,10 +47,10 @@ class Vocab(object):
         self._id_to_word[self._count] = w
         self._count += 1
         if max_size != 0 and self._count >= max_size:
-          print ("max_size of vocab was specified as %i; we now have %i words. Stopping reading." % (max_size, self._count))
+          # print ("max_size of vocab was specified as %i; we now have %i words. Stopping reading." % (max_size, self._count))
           break
 
-    print ("Finished constructing vocabulary of %i total words. Last word added: %s" % (self._count, self._id_to_word[self._count-1]))
+    # print ("Finished constructing vocabulary of %i total words. Last word added: %s" % (self._count, self._id_to_word[self._count-1]))
 
   def word2id(self, word):
     if word not in self._word_to_id:

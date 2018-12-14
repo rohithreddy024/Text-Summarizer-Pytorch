@@ -16,7 +16,7 @@ def get_enc_data(batch):
 
     ct_e = T.zeros(batch_size, 2*config.hidden_dim)
 
-    enc_batch =get_cuda(enc_batch)
+    enc_batch = get_cuda(enc_batch)
     enc_padding_mask = get_cuda(enc_padding_mask)
 
     ct_e = get_cuda(ct_e)
@@ -34,7 +34,7 @@ def get_enc_data(batch):
 
     return enc_batch, enc_lens, enc_padding_mask, enc_batch_extend_vocab, extra_zeros, ct_e
 
-def get_sum_dec_data(batch):
+def get_dec_data(batch):
     dec_batch = T.from_numpy(batch.dec_batch).long()
     dec_lens = batch.dec_lens
     max_dec_len = np.max(dec_lens)
