@@ -51,7 +51,7 @@ for RL training
 python eval.py --task=validate --start_from=0100000.tar
 ```
 ## Testing
-* After finding best model of RL training (lets say ```0200000.tar```), get all rouge scores (rouge-1, rouge-2, rouge-l) for that model by running (with Python 3):
+* After finding the best model of RL training (lets say ```0200000.tar```), evaluate it on test data & get all rouge metrics by running (with Python 3):
 ```
 python eval.py --task=test --load_model=0200000.tar
 ```
