@@ -74,7 +74,7 @@ class Train(object):
         x_t = get_cuda(T.LongTensor(len(enc_out)).fill_(self.start_id))                             #Input to the decoder
         prev_s = None                                                                               #Used for intra-decoder attention (section 2.2 in https://arxiv.org/pdf/1705.04304.pdf)
         sum_temporal_srcs = None                                                                    #Used for intra-temporal attention (section 2.1 in https://arxiv.org/pdf/1705.04304.pdf)
-        for t in range(min(max_dec_len + 1, config.max_dec_steps)):
+        for t in range(min(max_dec_len, config.max_dec_steps)):
             use_gound_truth = get_cuda((T.rand(len(enc_out)) > 0.25)).long()                        #Probabilities indicating whether to use ground truth labels instead of previous decoded tokens
             x_t = use_gound_truth * dec_batch[:, t] + (1 - use_gound_truth) * x_t                   #Select decoder input based on use_ground_truth probabilities
             x_t = self.model.embeds(x_t)
