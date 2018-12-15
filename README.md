@@ -14,7 +14,7 @@ Combining [A Deep Reinforced Model for Abstractive Summarization](https://arxiv.
 * [rouge](https://github.com/pltrdy/rouge) 
 
 ## Data
-* Download train, valid and test pairs (article, title) of OpenNMT provided Gigaword dataset from [here](https://github.com/harvardnlp/sent-summary)
+* Download train and valid pairs (article, title) of OpenNMT provided Gigaword dataset from [here](https://github.com/harvardnlp/sent-summary)
 * Copy files ```train.article.txt```, ```train.title.txt```, ```valid.article.filter.txt```and ```valid.title.filter.txt``` to ```data/unfinished``` folder
 * Files are already preprcessed
 
@@ -31,28 +31,29 @@ python make_data_files.py
 ```
 python train.py --train_mle=yes --train_rl=no --mle_weight=1.0
 ```
-* Next, find the best saved model on test data by running (with Python 3):
+* Next, find the best saved model on validation data by running (with Python 3):
 ```
-python eval.py --task=test --start_from=0005000.tar
+python eval.py --task=validate --start_from=0005000.tar
 ```
-* After finding the best model (lets say ```0105000.tar```) with high rouge-L f score, load it and run (with Python 3):
+* After finding the best model (lets say ```0100000.tar```) with high rouge-l f score, load it and run (with Python 3):
 ```
-python train.py --train_mle=yes --train_rl=yes --mle_weight=0.25 --load_model=0105000.tar
+python train.py --train_mle=yes --train_rl=yes --mle_weight=0.25 --load_model=0100000.tar
 ```
 for MLE + RL training (or)
 ```
-python train.py --train_mle=no --train_rl=yes --mle_weight=0.0 --load_model=0105000.tar
+python train.py --train_mle=no --train_rl=yes --mle_weight=0.0 --load_model=0100000.tar
 ```
 for RL training
 
+## Validation
+* To perform validation of RL training, run (with Python 3):
+```
+python eval.py --task=validate --start_from=0100000.tar
+```
 ## Testing
-* To perform testing of RL training, run (with Python 3):
+* After finding best model of RL training (lets say ```0200000.tar```), get all rouge scores (rouge-1, rouge-2, rouge-l) for that model by running (with Python 3):
 ```
-python eval.py --task=test --start_from=0105000.tar
-```
-* After finding best model of RL training (lets say ```0180000.tar```), get all rouge scores (rouge-1, rouge-2, rouge-l) for that model by running (with Python 3):
-```
-python eval.py --task=get_full_scores --load_model=0180000.tar
+python eval.py --task=test --load_model=0200000.tar
 ```
 
 ## References
