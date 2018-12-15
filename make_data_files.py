@@ -26,15 +26,34 @@ def delete_folder(folder_path):
     if os.path.exists(folder_path):
         shutil.rmtree(folder_path)
 
-def write_to_bin(article_path, title_path, out_file, vocab_counter = None):
+def shuffle_text_data(unshuffled_art, unshuffled_abs, shuffled_art, shuffled_abs):
+    article_itr = open(os.path.join(unfinished_path, unshuffled_art), "r")
+    abstract_itr = open(os.path.join(unfinished_path, unshuffled_abs), "r")
+    list_of_pairs = []
+    for article in article_itr:
+        article = article.strip()
+        abstract = next(abstract_itr).strip()
+        list_of_pairs.append((article, abstract))
+    article_itr.close()
+    abstract_itr.close()
+    random.shuffle(list_of_pairs)
+    article_itr = open(os.path.join(unfinished_path, shuffled_art), "w")
+    abstract_itr = open(os.path.join(unfinished_path, shuffled_abs), "w")
+    for pair in list_of_pairs:
+        article_itr.write(pair[0]+"\n")
+        abstract_itr.write(pair[1]+"\n")
+    article_itr.close()
+    abstract_itr.close()
+
+def write_to_bin(article_path, abstract_path, out_file, vocab_counter = None):
 
     with open(out_file, 'wb') as writer:
 
         article_itr = open(article_path, 'r')
-        titles_itr = open(title_path, 'r')
+        abstract_itr = open(abstract_path, 'r')
         for article in tqdm.tqdm(article_itr):
             article = article.strip()
-            abstract = next(titles_itr).strip()
+            abstract = next(abstract_itr).strip()
 
             tf_example = example_pb2.Example()
             tf_example.features.feature['article'].bytes_list.value.extend([article])
@@ -59,13 +78,14 @@ def write_to_bin(article_path, title_path, out_file, vocab_counter = None):
             for word, count in vocab_counter.most_common(VOCAB_SIZE):
                 writer.write(word + ' ' + str(count) + '\n')
 
+
 def creating_finished_data():
     make_folder(finished_path)
 
     vocab_counter = collections.Counter()
 
-    write_to_bin(os.path.join(unfinished_path, "train.article.txt"), os.path.join(unfinished_path, "train.title.txt"), train_bin_path, vocab_counter)
-    write_to_bin(os.path.join(unfinished_path, "valid.article.filter.txt"), os.path.join(unfinished_path, "valid.title.filter.txt"), valid_bin_path)
+    write_to_bin(os.path.join(unfinished_path, "train.art.shuf.txt"), os.path.join(unfinished_path, "train.abs.shuf.txt"), train_bin_path, vocab_counter)
+    write_to_bin(os.path.join(unfinished_path, "valid.art.shuf.txt"), os.path.join(unfinished_path, "valid.abs.shuf.txt"), valid_bin_path)
 
 
 def chunk_file(set_name, chunks_dir, bin_file):
@@ -89,18 +109,28 @@ def chunk_file(set_name, chunks_dir, bin_file):
 
 
 if __name__ == "__main__":
+    shuffle_text_data("train.article.txt", "train.title.txt", "train.art.shuf.txt", "train.abs.shuf.txt")
+    shuffle_text_data("valid.article.filter.txt", "valid.title.filter.txt", "valid.art.shuf.txt", "valid.abs.shuf.txt")
+    print("Completed shuffling train & valid text files")
     delete_folder(finished_path)
     creating_finished_data()        #create bin files
-
+    print("Completed creating bin file for train & valid")
     delete_folder(chunk_path)
     chunk_file("train", os.path.join(chunk_path, "train"), train_bin_path)
-    chunk_file("valid", os.path.join(chunk_path, "valid"), valid_bin_path)
-
-    #Validation data contains around 1.9 lakh examples. Create test data by borrowing 15k examples from validation data
+    chunk_file("valid", os.path.join(chunk_path, "main_valid"), valid_bin_path)
+    print("Completed chunking main bin files into smaller ones")
+    #Performing rouge evaluation on 1.9 lakh sentences takes lot of time. So, create mini validation set & test set by borrowing 15k samples each from these 1.9 lakh sentences
+    make_folder(os.path.join(chunk_path, "valid"))
     make_folder(os.path.join(chunk_path, "test"))
-    valid_bin_chunks = os.listdir(os.path.join(chunk_path, "valid"))
-    test_chunk = random.choice(valid_bin_chunks)
-    shutil.move(os.path.join(chunk_path, "valid", test_chunk), os.path.join(chunk_path, "test", "test_00.bin"))
+    bin_chunks = os.listdir(os.path.join(chunk_path, "main_valid"))
+    bin_chunks.sort()
+    samples = random.sample(set(bin_chunks[:-1]), 2)      #Exclude last bin file; contains only 9k sentences
+    valid_chunk, test_chunk = samples[0], samples[1]
+    shutil.copyfile(os.path.join(chunk_path, "main_valid", valid_chunk), os.path.join(chunk_path, "valid", "valid_00.bin"))
+    shutil.copyfile(os.path.join(chunk_path, "main_valid", test_chunk), os.path.join(chunk_path, "test", "test_00.bin"))
+
+    # delete_folder(finished)
+    # delete_folder(os.path.join(chunk_path, "main_valid"))
 
 
 
