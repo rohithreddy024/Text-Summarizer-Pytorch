@@ -1,0 +1,271 @@
+--------MLE Training------------
+
+$ python train.py
+Training mle: yes, Training rl: no, mle weight: 1.00, rl weight: 0.00
+intra_encoder: True intra_decoder: True
+iter: 1000 mle_loss: 4.652 reward: 0.0000
+iter: 2000 mle_loss: 3.942 reward: 0.0000
+iter: 3000 mle_loss: 3.699 reward: 0.0000
+iter: 4000 mle_loss: 3.555 reward: 0.0000
+iter: 5000 mle_loss: 3.447 reward: 0.0000
+iter: 6000 mle_loss: 3.378 reward: 0.0000
+iter: 7000 mle_loss: 3.321 reward: 0.0000
+iter: 8000 mle_loss: 3.282 reward: 0.0000
+iter: 9000 mle_loss: 3.242 reward: 0.0000
+iter: 10000 mle_loss: 3.206 reward: 0.0000
+iter: 11000 mle_loss: 3.183 reward: 0.0000
+iter: 12000 mle_loss: 3.154 reward: 0.0000
+iter: 13000 mle_loss: 3.137 reward: 0.0000
+iter: 14000 mle_loss: 3.122 reward: 0.0000
+iter: 15000 mle_loss: 3.081 reward: 0.0000
+iter: 16000 mle_loss: 3.026 reward: 0.0000
+iter: 17000 mle_loss: 3.014 reward: 0.0000
+iter: 18000 mle_loss: 2.999 reward: 0.0000
+iter: 19000 mle_loss: 2.992 reward: 0.0000
+iter: 20000 mle_loss: 2.989 reward: 0.0000
+iter: 21000 mle_loss: 2.971 reward: 0.0000
+iter: 22000 mle_loss: 2.983 reward: 0.0000
+iter: 23000 mle_loss: 2.966 reward: 0.0000
+iter: 24000 mle_loss: 2.957 reward: 0.0000
+iter: 25000 mle_loss: 2.946 reward: 0.0000
+iter: 26000 mle_loss: 2.942 reward: 0.0000
+iter: 27000 mle_loss: 2.941 reward: 0.0000
+iter: 28000 mle_loss: 2.930 reward: 0.0000
+iter: 29000 mle_loss: 2.923 reward: 0.0000
+iter: 30000 mle_loss: 2.906 reward: 0.0000
+iter: 31000 mle_loss: 2.818 reward: 0.0000
+iter: 32000 mle_loss: 2.809 reward: 0.0000
+iter: 33000 mle_loss: 2.822 reward: 0.0000
+iter: 34000 mle_loss: 2.807 reward: 0.0000
+iter: 35000 mle_loss: 2.833 reward: 0.0000
+iter: 36000 mle_loss: 2.815 reward: 0.0000
+iter: 37000 mle_loss: 2.829 reward: 0.0000
+iter: 38000 mle_loss: 2.830 reward: 0.0000
+iter: 39000 mle_loss: 2.822 reward: 0.0000
+iter: 40000 mle_loss: 2.833 reward: 0.0000
+iter: 41000 mle_loss: 2.817 reward: 0.0000
+iter: 42000 mle_loss: 2.815 reward: 0.0000
+iter: 43000 mle_loss: 2.816 reward: 0.0000
+iter: 44000 mle_loss: 2.812 reward: 0.0000
+iter: 45000 mle_loss: 2.757 reward: 0.0000
+iter: 46000 mle_loss: 2.698 reward: 0.0000
+iter: 47000 mle_loss: 2.701 reward: 0.0000
+iter: 48000 mle_loss: 2.710 reward: 0.0000
+iter: 49000 mle_loss: 2.728 reward: 0.0000
+iter: 50000 mle_loss: 2.711 reward: 0.0000
+iter: 51000 mle_loss: 2.718 reward: 0.0000
+iter: 52000 mle_loss: 2.728 reward: 0.0000
+iter: 53000 mle_loss: 2.725 reward: 0.0000
+iter: 54000 mle_loss: 2.722 reward: 0.0000
+iter: 55000 mle_loss: 2.728 reward: 0.0000
+iter: 56000 mle_loss: 2.729 reward: 0.0000
+iter: 57000 mle_loss: 2.731 reward: 0.0000
+iter: 58000 mle_loss: 2.741 reward: 0.0000
+iter: 59000 mle_loss: 2.731 reward: 0.0000
+iter: 60000 mle_loss: 2.645 reward: 0.0000
+iter: 61000 mle_loss: 2.600 reward: 0.0000
+iter: 62000 mle_loss: 2.600 reward: 0.0000
+iter: 63000 mle_loss: 2.612 reward: 0.0000
+iter: 64000 mle_loss: 2.626 reward: 0.0000
+iter: 65000 mle_loss: 2.637 reward: 0.0000
+iter: 66000 mle_loss: 2.641 reward: 0.0000
+iter: 67000 mle_loss: 2.652 reward: 0.0000
+iter: 68000 mle_loss: 2.651 reward: 0.0000
+iter: 69000 mle_loss: 2.643 reward: 0.0000
+iter: 70000 mle_loss: 2.661 reward: 0.0000
+iter: 71000 mle_loss: 2.668 reward: 0.0000
+iter: 72000 mle_loss: 2.668 reward: 0.0000
+iter: 73000 mle_loss: 2.679 reward: 0.0000
+iter: 74000 mle_loss: 2.670 reward: 0.0000
+iter: 75000 mle_loss: 2.567 reward: 0.0000
+iter: 76000 mle_loss: 2.524 reward: 0.0000
+iter: 77000 mle_loss: 2.549 reward: 0.0000
+iter: 78000 mle_loss: 2.535 reward: 0.0000
+iter: 79000 mle_loss: 2.552 reward: 0.0000
+iter: 80000 mle_loss: 2.568 reward: 0.0000
+iter: 81000 mle_loss: 2.581 reward: 0.0000
+iter: 82000 mle_loss: 2.595 reward: 0.0000
+iter: 83000 mle_loss: 2.600 reward: 0.0000
+iter: 84000 mle_loss: 2.595 reward: 0.0000
+iter: 85000 mle_loss: 2.593 reward: 0.0000
+iter: 86000 mle_loss: 2.615 reward: 0.0000
+iter: 87000 mle_loss: 2.608 reward: 0.0000
+iter: 88000 mle_loss: 2.604 reward: 0.0000
+iter: 89000 mle_loss: 2.618 reward: 0.0000
+iter: 90000 mle_loss: 2.483 reward: 0.0000
+iter: 91000 mle_loss: 2.483 reward: 0.0000
+iter: 92000 mle_loss: 2.479 reward: 0.0000
+iter: 93000 mle_loss: 2.490 reward: 0.0000
+iter: 94000 mle_loss: 2.520 reward: 0.0000
+iter: 95000 mle_loss: 2.527 reward: 0.0000
+iter: 96000 mle_loss: 2.525 reward: 0.0000
+iter: 97000 mle_loss: 2.532 reward: 0.0000
+iter: 98000 mle_loss: 2.546 reward: 0.0000
+iter: 99000 mle_loss: 2.537 reward: 0.0000
+iter: 100000 mle_loss: 2.546 reward: 0.0000
+iter: 101000 mle_loss: 2.551 reward: 0.0000
+iter: 102000 mle_loss: 2.562 reward: 0.0000
+iter: 103000 mle_loss: 2.566 reward: 0.0000
+iter: 104000 mle_loss: 2.577 reward: 0.0000
+iter: 105000 mle_loss: 2.370 reward: 0.0000
+iter: 106000 mle_loss: 2.433 reward: 0.0000
+iter: 107000 mle_loss: 2.435 reward: 0.0000
+iter: 108000 mle_loss: 2.454 reward: 0.0000
+iter: 109000 mle_loss: 2.461 reward: 0.0000
+iter: 110000 mle_loss: 2.479 reward: 0.0000
+iter: 111000 mle_loss: 2.486 reward: 0.0000
+iter: 112000 mle_loss: 2.499 reward: 0.0000
+iter: 113000 mle_loss: 2.503 reward: 0.0000
+iter: 114000 mle_loss: 2.503 reward: 0.0000
+iter: 115000 mle_loss: 2.518 reward: 0.0000
+iter: 116000 mle_loss: 2.515 reward: 0.0000
+iter: 117000 mle_loss: 2.523 reward: 0.0000
+iter: 118000 mle_loss: 2.532 reward: 0.0000
+iter: 119000 mle_loss: 2.511 reward: 0.0000
+iter: 120000 mle_loss: 2.373 reward: 0.0000
+iter: 121000 mle_loss: 2.386 reward: 0.0000
+iter: 122000 mle_loss: 2.386 reward: 0.0000
+iter: 123000 mle_loss: 2.419 reward: 0.0000
+iter: 124000 mle_loss: 2.419 reward: 0.0000
+iter: 125000 mle_loss: 2.440 reward: 0.0000
+iter: 126000 mle_loss: 2.455 reward: 0.0000
+iter: 127000 mle_loss: 2.463 reward: 0.0000
+iter: 128000 mle_loss: 2.472 reward: 0.0000
+iter: 129000 mle_loss: 2.474 reward: 0.0000
+iter: 130000 mle_loss: 2.479 reward: 0.0000
+iter: 131000 mle_loss: 2.487 reward: 0.0000
+iter: 132000 mle_loss: 2.486 reward: 0.0000
+iter: 133000 mle_loss: 2.488 reward: 0.0000
+iter: 134000 mle_loss: 2.423 reward: 0.0000
+iter: 135000 mle_loss: 2.300 reward: 0.0000
+iter: 136000 mle_loss: 2.368 reward: 0.0000
+iter: 137000 mle_loss: 2.381 reward: 0.0000
+iter: 138000 mle_loss: 2.367 reward: 0.0000
+iter: 139000 mle_loss: 2.408 reward: 0.0000
+iter: 140000 mle_loss: 2.404 reward: 0.0000
+iter: 141000 mle_loss: 2.412 reward: 0.0000
+iter: 142000 mle_loss: 2.439 reward: 0.0000
+iter: 143000 mle_loss: 2.433 reward: 0.0000
+iter: 144000 mle_loss: 2.448 reward: 0.0000
+iter: 145000 mle_loss: 2.445 reward: 0.0000
+iter: 146000 mle_loss: 2.462 reward: 0.0000
+iter: 147000 mle_loss: 2.456 reward: 0.0000
+iter: 148000 mle_loss: 2.468 reward: 0.0000
+iter: 149000 mle_loss: 2.399 reward: 0.0000
+iter: 150000 mle_loss: 2.308 reward: 0.0000
+iter: 151000 mle_loss: 2.330 reward: 0.0000
+iter: 152000 mle_loss: 2.371 reward: 0.0000
+iter: 153000 mle_loss: 2.368 reward: 0.0000
+iter: 154000 mle_loss: 2.363 reward: 0.0000
+iter: 155000 mle_loss: 2.378 reward: 0.0000
+iter: 156000 mle_loss: 2.398 reward: 0.0000
+iter: 157000 mle_loss: 2.405 reward: 0.0000
+iter: 158000 mle_loss: 2.408 reward: 0.0000
+
+
+-------------MLE Validation---------------
+
+$ python eval.py --task=validate --start_from=0005000.tar
+0005000.tar rouge_l: 0.3818
+0010000.tar rouge_l: 0.3921
+0015000.tar rouge_l: 0.3988
+0020000.tar rouge_l: 0.4030
+0025000.tar rouge_l: 0.4047
+0030000.tar rouge_l: 0.4037
+0035000.tar rouge_l: 0.4063
+0040000.tar rouge_l: 0.4078
+0045000.tar rouge_l: 0.4088
+0050000.tar rouge_l: 0.4077
+0055000.tar rouge_l: 0.4075
+0060000.tar rouge_l: 0.4079
+0065000.tar rouge_l: 0.4114		#best
+0070000.tar rouge_l: 0.4074
+0075000.tar rouge_l: 0.4080
+0080000.tar rouge_l: 0.4090
+0085000.tar rouge_l: 0.4060
+0090000.tar rouge_l: 0.4079
+0095000.tar rouge_l: 0.4086
+0100000.tar rouge_l: 0.4076
+0105000.tar rouge_l: 0.4053
+0110000.tar rouge_l: 0.4062
+0115000.tar rouge_l: 0.4056
+0120000.tar rouge_l: 0.4022
+0125000.tar rouge_l: 0.4042
+0130000.tar rouge_l: 0.4067
+0135000.tar rouge_l: 0.4012
+0140000.tar rouge_l: 0.4046
+0145000.tar rouge_l: 0.4026
+0150000.tar rouge_l: 0.4026
+0155000.tar rouge_l: 0.4018
+
+-----------------MLE + RL Training--------------------
+
+$ python train.py --train_mle=yes --train_rl=yes --mle_weight=0.25 --load_model=0065000.tar --new_lr=0.0001
+Training mle: yes, Training rl: yes, mle weight: 0.25, rl weight: 0.75
+intra_encoder: True intra_decoder: True
+Loaded model at data/saved_models/0065000.tar
+iter: 66000 mle_loss: 2.555 reward: 0.3088
+iter: 67000 mle_loss: 2.570 reward: 0.3097
+iter: 68000 mle_loss: 2.496 reward: 0.3177
+iter: 69000 mle_loss: 2.568 reward: 0.3101
+iter: 70000 mle_loss: 2.437 reward: 0.3231
+iter: 71000 mle_loss: 2.474 reward: 0.3209
+iter: 72000 mle_loss: 2.471 reward: 0.3204
+iter: 73000 mle_loss: 2.474 reward: 0.3204
+iter: 74000 mle_loss: 2.451 reward: 0.3226
+iter: 75000 mle_loss: 2.477 reward: 0.3204
+iter: 76000 mle_loss: 2.470 reward: 0.3204
+iter: 77000 mle_loss: 2.503 reward: 0.3182
+iter: 78000 mle_loss: 2.523 reward: 0.3148
+iter: 79000 mle_loss: 2.385 reward: 0.3286
+iter: 80000 mle_loss: 2.488 reward: 0.3200
+iter: 81000 mle_loss: 2.396 reward: 0.3271
+iter: 82000 mle_loss: 2.459 reward: 0.3215
+iter: 83000 mle_loss: 2.371 reward: 0.3301
+iter: 84000 mle_loss: 2.433 reward: 0.3253
+iter: 85000 mle_loss: 2.475 reward: 0.3207
+iter: 86000 mle_loss: 2.504 reward: 0.3178
+iter: 87000 mle_loss: 2.441 reward: 0.3241
+iter: 88000 mle_loss: 2.424 reward: 0.3266
+iter: 89000 mle_loss: 2.399 reward: 0.3285
+iter: 90000 mle_loss: 2.405 reward: 0.3274
+iter: 91000 mle_loss: 2.425 reward: 0.3262
+iter: 92000 mle_loss: 2.424 reward: 0.3264
+iter: 93000 mle_loss: 2.433 reward: 0.3252
+iter: 94000 mle_loss: 2.414 reward: 0.3278
+iter: 95000 mle_loss: 2.444 reward: 0.3241
+iter: 96000 mle_loss: 2.395 reward: 0.3288
+iter: 97000 mle_loss: 2.425 reward: 0.3256
+iter: 98000 mle_loss: 2.378 reward: 0.3305
+iter: 99000 mle_loss: 2.415 reward: 0.3268
+iter: 100000 mle_loss: 2.412 reward: 0.3277
+iter: 101000 mle_loss: 2.387 reward: 0.3296
+iter: 102000 mle_loss: 2.370 reward: 0.3316
+iter: 103000 mle_loss: 2.420 reward: 0.3268
+iter: 104000 mle_loss: 2.408 reward: 0.3285
+iter: 105000 mle_loss: 2.415 reward: 0.3276
+iter: 106000 mle_loss: 2.401 reward: 0.3295
+iter: 107000 mle_loss: 2.467 reward: 0.3233
+
+
+----------------------MLE + RL Validation--------------------------
+
+$ python eval.py --task=validate --start_from=0070000.tar
+0070000.tar rouge_l: 0.4169
+0075000.tar rouge_l: 0.4174
+0080000.tar rouge_l: 0.4184
+0085000.tar rouge_l: 0.4186		#best
+0090000.tar rouge_l: 0.4165
+0095000.tar rouge_l: 0.4173
+0100000.tar rouge_l: 0.4164
+0105000.tar rouge_l: 0.4163
+
+----------------------MLE Testing------------------------------------
+
+$ python eval.py --task=test --load_model=0065000.tar
+0065000.tar scores: {'rouge-1': {'f': 0.4412018559893622, 'p': 0.4814799494024485, 'r': 0.4232331027817015}, 'rouge-2': {'f': 0.23238981595683728, 'p': 0.2531296070596062, 'r': 0.22407861554997008}, 'rouge-l': {'f': 0.40477682528278364, 'p': 0.4584684491434479, 'r': 0.40351107200202596}}
+
+----------------------MLE + RL Testing-------------------------------
+
+$ python eval.py --task=test --load_model=0085000.tar
+0085000.tar scores: {'rouge-1': {'f': 0.4499047033247696, 'p': 0.4853756369556345, 'r': 0.43544461386607497}, 'rouge-2': {'f': 0.24037014314625643, 'p': 0.25903387205387235, 'r': 0.23362662645146298}, 'rouge-l': {'f': 0.41320241732946406, 'p': 0.4616655167980162, 'r': 0.4144419466382236}}
