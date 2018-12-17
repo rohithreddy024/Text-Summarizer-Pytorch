@@ -90,7 +90,7 @@ scores: {
 ```ref:``` thousands flee samarra fearing battle  
 ```dec:``` tens of thousands flee samarra expecting showdown with u.s. troops  
 
-```article:``` the #### tung blossom festival will kick off saturday with a fun-filled ceremony at the west lake resort in the northern taiwan county of miaoli , a hakka stronghold , the council of hakka affairs -lrb- cha -rrb- announced tuesday . 
+```article:``` the #### tung blossom festival will kick off saturday with a fun-filled ceremony at the west lake resort in the northern taiwan county of miaoli , a hakka stronghold , the council of hakka affairs -lrb- cha -rrb- announced tuesday .  
 ```ref:``` #### tung blossom festival to kick off saturday  
 ```dec:``` #### tung blossom festival to kick off in miaoli  
 
