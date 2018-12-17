@@ -10,10 +10,8 @@ emb_dim = 256
 batch_size = 200
 max_enc_steps = 55		#99% of the articles are within length 55
 max_dec_steps = 15		#99% of the titles are within length 15
-max_rec_dec_steps = 55 
 beam_size = 4
 min_dec_steps= 3
-min_dec_rec_steps = 10
 vocab_size = 50000
 
 lr = 0.001
@@ -28,4 +26,3 @@ save_model_path = "data/saved_models"
 
 intra_encoder = True
 intra_decoder = True
-
