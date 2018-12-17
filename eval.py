@@ -111,5 +111,5 @@ if __name__ == "__main__":
             eval_processor = Evaluate(config.valid_data_path, opt)
             eval_processor.evaluate_batch()
     else:   #test
-        valid_processor = Evaluate(config.test_data_path, opt)
-        valid_processor.evaluate_batch()
+        eval_processor = Evaluate(config.test_data_path, opt)
+        eval_processor.evaluate_batch()

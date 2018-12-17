@@ -54,6 +54,8 @@ class Train(object):
             self.model.load_state_dict(checkpoint["model_dict"])
             self.trainer.load_state_dict(checkpoint["trainer_dict"])
             print("Loaded model at " + load_model_path)
+        if self.opt.new_lr is not None:
+            self.trainer = T.optim.Adam(self.model.parameters(), lr=self.opt.new_lr)
         return start_iter
 
     def train_batch_MLE(self, enc_out, enc_hidden, enc_padding_mask, ct_e, extra_zeros, enc_batch_extend_vocab, batch):
@@ -258,6 +260,7 @@ if __name__ == "__main__":
     parser.add_argument('--train_rl', type=str, default="no")
     parser.add_argument('--mle_weight', type=float, default=1.0)
     parser.add_argument('--load_model', type=str, default=None)
+    parser.add_argument('--new_lr', type=float, default=None)
     opt = parser.parse_args()
     opt.rl_weight = 1 - opt.mle_weight
     print("Training mle: %s, Training rl: %s, mle weight: %.2f, rl weight: %.2f"%(opt.train_mle, opt.train_rl, opt.mle_weight, opt.rl_weight))
