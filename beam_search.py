@@ -21,7 +21,7 @@ class Beam(object):
         self.unk_id = unk_id
 
     def get_current_state(self):
-        tokens = self.tokens[:,-1]
+        tokens = self.tokens[:,-1].clone()
         for i in range(len(tokens)):
             if tokens[i].item() >= config.vocab_size:
                 tokens[i] = self.unk_id
